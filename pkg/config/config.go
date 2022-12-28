@@ -13,7 +13,7 @@ import (
 	"strings"
 
 	"github.com/fsouza/fake-gcs-server/fakestorage"
-	"github.com/fsouza/fake-gcs-server/internal/notification"
+	"github.com/fsouza/fake-gcs-server/pkg/notification"
 	"github.com/sirupsen/logrus"
 )
 

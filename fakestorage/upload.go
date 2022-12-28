@@ -19,8 +19,8 @@ import (
 	"strings"
 
 	"cloud.google.com/go/storage"
-	"github.com/fsouza/fake-gcs-server/internal/backend"
-	"github.com/fsouza/fake-gcs-server/internal/checksum"
+	"github.com/fsouza/fake-gcs-server/pkg/backend"
+	"github.com/fsouza/fake-gcs-server/pkg/checksum"
 	"github.com/gorilla/mux"
 )
 

@@ -10,7 +10,7 @@ import (
 	"time"
 
 	"cloud.google.com/go/pubsub"
-	"github.com/fsouza/fake-gcs-server/internal/backend"
+	"github.com/fsouza/fake-gcs-server/pkg/backend"
 )
 
 // EventType is the type of event to trigger. The descriptions of the events

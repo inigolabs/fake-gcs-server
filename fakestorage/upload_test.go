@@ -20,7 +20,7 @@ import (
 	"testing"
 
 	"cloud.google.com/go/storage"
-	"github.com/fsouza/fake-gcs-server/internal/checksum"
+	"github.com/fsouza/fake-gcs-server/pkg/checksum"
 	"google.golang.org/api/googleapi"
 )
 
