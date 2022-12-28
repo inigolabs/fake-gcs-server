@@ -1,0 +1,9 @@
+githubRepoOwner: inigolabs
+githubRepoName: fake-gcs-server
+githubHost: github.com
+requireChecks: false
+requireApproval: true
+githubRemote: origin
+githubBranch: main
+remoteBranches: []
+mergeMethod: rebase
