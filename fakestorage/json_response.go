@@ -7,7 +7,7 @@ import (
 	"os"
 	"syscall"
 
-	"github.com/fsouza/fake-gcs-server/internal/backend"
+	"github.com/fsouza/fake-gcs-server/pkg/backend"
 )
 
 type jsonResponse struct {

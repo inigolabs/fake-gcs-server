@@ -18,7 +18,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/fsouza/fake-gcs-server/internal/checksum"
+	"github.com/fsouza/fake-gcs-server/pkg/checksum"
 	"github.com/pkg/xattr"
 )
 

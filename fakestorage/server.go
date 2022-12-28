@@ -24,8 +24,8 @@ import (
 	"sync"
 
 	"cloud.google.com/go/storage"
-	"github.com/fsouza/fake-gcs-server/internal/backend"
-	"github.com/fsouza/fake-gcs-server/internal/notification"
+	"github.com/fsouza/fake-gcs-server/pkg/backend"
+	"github.com/fsouza/fake-gcs-server/pkg/notification"
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	"github.com/sirupsen/logrus"

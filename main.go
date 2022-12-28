@@ -15,8 +15,8 @@ import (
 	"syscall"
 
 	"github.com/fsouza/fake-gcs-server/fakestorage"
-	"github.com/fsouza/fake-gcs-server/internal/checksum"
-	"github.com/fsouza/fake-gcs-server/internal/config"
+	"github.com/fsouza/fake-gcs-server/pkg/checksum"
+	"github.com/fsouza/fake-gcs-server/pkg/config"
 	"github.com/sirupsen/logrus"
 )
 
