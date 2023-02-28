@@ -110,7 +110,7 @@ func TestPubsubEventManager_Trigger(t *testing.T) {
 				objectPrefix: test.prefix,
 			}
 			publisher := &mockPublisher{}
-			eventManager.publisher = publisher
+			eventManager.publisher = []eventPublisher{publisher}
 			eventManager.publishSynchronously = true
 
 			eventManager.Trigger(&obj, EventFinalize, nil)
