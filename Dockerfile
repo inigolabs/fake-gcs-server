@@ -15,4 +15,5 @@ RUN apk add --no-cache mailcap
 COPY --from=builder /code/fake-gcs-server /bin/fake-gcs-server
 RUN /bin/fake-gcs-server -h
 EXPOSE 4443
+LABEL org.opencontainers.image.source=https://github.com/inigolabs/fake-gcs-server
 ENTRYPOINT ["/bin/fake-gcs-server", "-data", "/data"]

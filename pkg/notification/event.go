@@ -69,7 +69,7 @@ type PubsubEventManager struct {
 	// trigger events.
 	objectPrefix string
 	//  publisher is used to publish events on.
-	publisher eventPublisher
+	publisher []eventPublisher
 }
 
 func NewPubsubEventManager(options EventManagerOptions, w io.Writer) (*PubsubEventManager, error) {
@@ -84,7 +84,10 @@ func NewPubsubEventManager(options EventManagerOptions, w io.Writer) (*PubsubEve
 		if err != nil {
 			return nil, fmt.Errorf("error creating pubsub client: %v", err)
 		}
-		manager.publisher = client.Topic(options.TopicName)
+
+		for _, topicName := range strings.Split(options.TopicName, ",") {
+			manager.publisher = append(manager.publisher, client.Topic(topicName))
+		}
 	}
 	return manager, nil
 }
@@ -145,13 +148,19 @@ func (m *PubsubEventManager) publish(o *backend.StreamingObject, eventType Event
 	if err != nil {
 		return err
 	}
-	if r := m.publisher.Publish(ctx, &pubsub.Message{
-		Data:       data,
-		Attributes: attributes,
-	}); r != nil {
-		_, err = r.Get(ctx)
-		return err
+
+	for _, publisher := range m.publisher {
+		if r := publisher.Publish(ctx, &pubsub.Message{
+			Data:       data,
+			Attributes: attributes,
+		}); r != nil {
+			_, err = r.Get(ctx)
+			if err != nil {
+				return err
+			}
+		}
 	}
+
 	return nil
 }
 
